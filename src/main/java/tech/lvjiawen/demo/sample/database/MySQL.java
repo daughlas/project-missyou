@@ -1,10 +1,10 @@
 package tech.lvjiawen.demo.sample.database;
 
-public class MySql implements IConnect {
+public class MySQL implements IConnect {
     private String ip;
     private Integer port;
 
-    public MySql(String ip, Integer port) {
+    public MySQL(String ip, Integer port) {
         this.ip = ip;
         this.port = port;
     }

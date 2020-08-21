@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import tech.lvjiawen.demo.sample.database.IConnect;
-import tech.lvjiawen.demo.sample.database.MySql;
+import tech.lvjiawen.demo.sample.database.MySQL;
 
 @Configuration
 public class DatabaseConfiguration {
@@ -15,6 +15,6 @@ public class DatabaseConfiguration {
 
     @Bean
     public IConnect mysql() {
-        return new MySql(this.ip, this.port);
+        return new MySQL(this.ip, this.port);
     }
 }
