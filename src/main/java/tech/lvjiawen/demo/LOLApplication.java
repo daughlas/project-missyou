@@ -1,16 +1,12 @@
 package tech.lvjiawen.demo;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
-import tech.lvjiawen.demo.sample.HeroConfiguration;
+import tech.lvjiawen.demo.sample.EnableLOLConfiguration;
 import tech.lvjiawen.demo.sample.ISkill;
-import tech.lvjiawen.demo.sample.LOLConfigurationSelector;
 
-@Import(LOLConfigurationSelector.class)
+@EnableLOLConfiguration
 public class LOLApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(LOLApplication.class)
@@ -18,6 +14,6 @@ public class LOLApplication {
                 .run(args);
 
         ISkill iSkill = (ISkill) context.getBean("irelia");
-        iSkill.r();
+        iSkill.q();
     }
 }
