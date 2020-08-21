@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import tech.lvjiawen.demo.sample.ISkill;
 
-//@Component
 public class Diana implements ISkill {
     private String skillName = "Dianna R";
     private String name;

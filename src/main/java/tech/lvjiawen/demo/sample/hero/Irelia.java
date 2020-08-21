@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import tech.lvjiawen.demo.sample.ISkill;
 
-//@Component
-//@Primary
 public class Irelia implements ISkill {
     public Irelia() {
         System.out.println("Irelia init");
