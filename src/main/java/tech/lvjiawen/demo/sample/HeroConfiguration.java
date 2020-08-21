@@ -1,5 +1,7 @@
 package tech.lvjiawen.demo.sample;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
@@ -13,16 +15,8 @@ import tech.lvjiawen.demo.sample.hero.Irelia;
 public class HeroConfiguration {
 
     @Bean
-//    @Conditional(DianaCondition.class)
-    @ConditionalOnProperty(value="hero.condition", havingValue="diana", matchIfMissing = true)
+    @ConditionalOnMissingBean(name="mysql")
     public ISkill diana() {
         return new Diana("Diana", 18);
-    }
-
-    @Bean
-//    @Conditional(IreliaCondition.class)
-    @ConditionalOnProperty(value="hero.condition", havingValue="irelia")
-    public ISkill irelia() {
-        return new Irelia();
     }
 }

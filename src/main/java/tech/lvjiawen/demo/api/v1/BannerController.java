@@ -15,20 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 public class BannerController {
 
     @Autowired
-    IConnect iConnect;
-
-    @Autowired
     private ISkill iSkill;
 
     @GetMapping("/test")
     public String test(HttpServletResponse response)  {
         iSkill.r();
         return "0190 Hello, spring boot. I am 吕嘉文!";
-    }
-
-    @GetMapping("/test4")
-    public String test4() {
-        iConnect.connect();
-        return "iconnect.connect";
     }
 }

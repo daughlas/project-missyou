@@ -13,7 +13,7 @@ public class DatabaseConfiguration {
     @Value("${mysql.port}")
     private Integer port;
 
-    @Bean
+//    @Bean
     public IConnect mysql() {
         return new MySQL(this.ip, this.port);
     }
