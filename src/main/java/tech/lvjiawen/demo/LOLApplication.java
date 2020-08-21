@@ -8,8 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import tech.lvjiawen.demo.sample.HeroConfiguration;
 import tech.lvjiawen.demo.sample.ISkill;
+import tech.lvjiawen.demo.sample.LOLConfigurationSelector;
 
-@Import(HeroConfiguration.class)
+@Import(LOLConfigurationSelector.class)
 public class LOLApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(LOLApplication.class)
