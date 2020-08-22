@@ -18,8 +18,12 @@ public class BannerController {
     private ISkill iSkill;
 
     @GetMapping("/test")
-    public String test(HttpServletResponse response)  {
+    public String test(HttpServletResponse response) throws Exception {
         iSkill.r();
+        if (true) {
+            throw new Exception("出错了");
+        }
+
         return "0190 Hello, spring boot. I am 吕嘉文!";
     }
 }
