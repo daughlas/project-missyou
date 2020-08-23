@@ -5,13 +5,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import tech.lvjiawen.demo.exception.http.ForbiddenException;
+import tech.lvjiawen.demo.exception.http.NotFoundException;
 import tech.lvjiawen.demo.sample.ISkill;
 import tech.lvjiawen.demo.sample.database.IConnect;
 
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/v1/banner")
+@RequestMapping("/banner")
 public class BannerController {
 
     @Autowired
@@ -21,7 +23,7 @@ public class BannerController {
     public String test(HttpServletResponse response) throws Exception {
         iSkill.r();
         if (true) {
-            throw new Exception("出错了");
+            throw new ForbiddenException(10000);
         }
 
         return "0190 Hello, spring boot. I am 吕嘉文!";
