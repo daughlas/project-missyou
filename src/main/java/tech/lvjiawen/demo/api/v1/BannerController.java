@@ -1,5 +1,6 @@
 package tech.lvjiawen.demo.api.v1;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -19,7 +20,7 @@ public class BannerController {
 
     @GetMapping("/test/{id}")
     public PersonDTO test(@PathVariable @Range(min= 1,max = 10, message="需要 1 - 10 之间") Integer id,
-                       @RequestParam String name,
+                       @RequestParam @Length(min=8) String name,
                        @RequestBody @Validated PersonDTO person) {
         iSkill.r();
         PersonDTO dto = PersonDTO.builder()
