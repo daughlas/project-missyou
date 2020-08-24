@@ -1,38 +1,42 @@
 package tech.lvjiawen.demo.api.v1;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Max;
 
 import tech.lvjiawen.demo.dto.PersonDTO;
-import tech.lvjiawen.demo.exception.http.ForbiddenException;
 import tech.lvjiawen.demo.sample.ISkill;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/banner")
+@Validated
 public class BannerController {
 
     @Autowired
     private ISkill iSkill;
 
-    @GetMapping("/test")
-    public String test(HttpServletResponse response) throws Exception {
+    @GetMapping("/test/{id}")
+    public PersonDTO test(@PathVariable @Range(min= 1,max = 10, message="需要 1 - 10 之间") Integer id,
+                       @RequestParam String name,
+                       @RequestBody @Validated PersonDTO person) {
         iSkill.r();
-        if (true) {
-            throw new ForbiddenException(10000);
-        }
-
-        return "0190 Hello, spring boot. I am 吕嘉文!";
+        PersonDTO dto = PersonDTO.builder()
+                .name("lvjiawen")
+                .age(18)
+                .build();
+        return dto;
     }
 
-    @GetMapping("/test/{idFE}")
-    public String test2(@PathVariable(name="idFE") Integer id) {
+    @GetMapping("/test2/{idFE}")
+    public PersonDTO test2(@PathVariable(name="idFE") Integer id) {
         iSkill.r();
-        System.out.println("id is " + id);
-        return "hello world";
+        PersonDTO dto = PersonDTO.builder()
+                .name("lvjiawen")
+                .age(18)
+                .build();
+        return dto;
     }
 
     @GetMapping("/test3")
