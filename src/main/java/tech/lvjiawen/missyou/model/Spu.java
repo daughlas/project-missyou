@@ -2,15 +2,18 @@ package tech.lvjiawen.missyou.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
+@Where(clause = "delete_time is null")
 public class Spu extends BaseEntity {
     @Id
     private Long id;
@@ -30,4 +33,15 @@ public class Spu extends BaseEntity {
     private String forThemeImg;
 
 //    private Object spuThemeImg;
+    @OneToMany
+    @JoinColumn(name="spuId")
+    private List<Sku> skuList;
+
+    @OneToMany
+    @JoinColumn(name="spuId")
+    private List<SpuImg> spuImgList;
+
+    @OneToMany
+    @JoinColumn(name="spuId")
+    private List<SpuDetailImg> spuDetailImgs;
 }

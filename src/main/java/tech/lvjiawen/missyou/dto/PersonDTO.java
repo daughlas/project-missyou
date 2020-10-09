@@ -3,7 +3,7 @@ package tech.lvjiawen.missyou.dto;
 import lombok.Builder;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
-import tech.lvjiawen.missyou.validators.PasswordEqual;
+import tech.lvjiawen.missyou.dto.validators.PasswordEqual;
 
 @Getter
 @Builder

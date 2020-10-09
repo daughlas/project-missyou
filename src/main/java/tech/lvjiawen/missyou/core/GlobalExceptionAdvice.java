@@ -15,6 +15,7 @@ import tech.lvjiawen.missyou.core.configuration.ExceptionCodeConfiguration;
 import tech.lvjiawen.missyou.exception.http.HttpException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.List;
 

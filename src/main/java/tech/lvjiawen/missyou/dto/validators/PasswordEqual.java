@@ -1,4 +1,4 @@
-package tech.lvjiawen.missyou.validators;
+package tech.lvjiawen.missyou.dto.validators;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

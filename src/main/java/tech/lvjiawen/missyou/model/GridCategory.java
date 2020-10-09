@@ -2,23 +2,20 @@ package tech.lvjiawen.missyou.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
-@Where(clause = "delete_time is null")
-public class BannerItem extends BaseEntity {
+public class GridCategory {
     @Id
     private Long id;
+    private String title;
     private String img;
-    private String keyword;
-    private short type;
     private String name;
-    private Long bannerId;
+    private Long categoryId;
+    private Long rootCategoryId;
 }

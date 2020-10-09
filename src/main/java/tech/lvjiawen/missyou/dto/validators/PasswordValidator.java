@@ -1,4 +1,4 @@
-package tech.lvjiawen.missyou.validators;
+package tech.lvjiawen.missyou.dto.validators;
 
 import tech.lvjiawen.missyou.dto.PersonDTO;
 

@@ -3,6 +3,7 @@ package tech.lvjiawen.missyou.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.MappedSuperclass;
 import java.util.Date;
